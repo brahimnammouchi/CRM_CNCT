@@ -2,7 +2,6 @@
 FROM python:3.9.6-alpine
 
 
-
 # set environment variables
 ENV PYTHONUNBUFFERED 1
 
@@ -13,9 +12,8 @@ RUN pip install -r requirements.txt
 
 # copy project
 # set work directory
-RUN mkdir /app
-WORKDIR /app
-COPY ./app /app/
-
-RUN adduser -D user
-USER user
+RUN mkdir CRM_CNCT
+WORKDIR /CRM_CNCT
+COPY ./CRM_CNCT /CRM_CNCT/
+EXPOSE 8000
+CMD cd /CRM_CNCT && python manage.py runserver 0.0.0.0:8000
