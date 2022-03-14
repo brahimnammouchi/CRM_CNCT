@@ -4,10 +4,11 @@ FROM python:3.9.6-alpine
 
 # set environment variables
 ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY ./requirements.txt .
+COPY ./requirements.txt ./CRM_CNCT
 RUN pip install -r requirements.txt
 
 # copy project
@@ -15,5 +16,3 @@ RUN pip install -r requirements.txt
 RUN mkdir CRM_CNCT
 WORKDIR /CRM_CNCT
 COPY ./CRM_CNCT /CRM_CNCT/
-EXPOSE 8000
-CMD cd /CRM_CNCT && python manage.py runserver 0.0.0.0:8000
