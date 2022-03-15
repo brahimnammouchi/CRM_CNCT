@@ -4,15 +4,10 @@ FROM python:3.9.6-alpine
 
 # set environment variables
 ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE=1
 
 # install dependencies
+RUN mkdir /code
+WORKDIR /code
 RUN pip install --upgrade pip
-COPY ./requirements.txt ./CRM_CNCT
+COPY . /code/
 RUN pip install -r requirements.txt
-
-# copy project
-# set work directory
-RUN mkdir CRM_CNCT
-WORKDIR /CRM_CNCT
-COPY ./CRM_CNCT /CRM_CNCT/
