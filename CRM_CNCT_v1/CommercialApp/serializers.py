@@ -1,5 +1,6 @@
 from dataclasses import fields
 from pyexpat import model
+from xmlrpc import client
 from rest_framework import serializers
 from setuptools import Command
 from CommercialApp.models import Client, Product
@@ -15,4 +16,4 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
 class CommandSerializer(serializers.ModelSerializer):
     model = Command
-    fields = ['pk', 'commande', 'qte', 'nom' ,'prenom']
+    fields = ['id', 'commande', 'qte', 'nom' ,'prenom']
