@@ -2,6 +2,7 @@ from http import client
 from multiprocessing.sharedctypes import Value
 from pyexpat import model
 from tkinter import CASCADE
+from urllib import request
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -15,12 +16,14 @@ class Client (models.Model):
     email=models.EmailField(max_length=20)
 
 class Product(models.Model):
+    id_product=models.AutoField(blank=True,primary_key=True)
     name=models.CharField(max_length=200,null=True)
     price=models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=False)
     image=models.ImageField(null=True,blank=True)
     description = models.CharField(max_length=500, null=True, blank=True)
 class Commande(models.Model):
-    client = models.ForeignKey(Client, related_name='commande', on_delete=models.CASCADE)
+    id_command= models.AutoField(primary_key=True,blank=True)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     produit = models.ForeignKey(Product, related_name='commande', on_delete=models.CASCADE)
     qte = models.IntegerField()

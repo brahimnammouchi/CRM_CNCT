@@ -16,4 +16,4 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
 class CommandSerializer(serializers.ModelSerializer):
     model = Command
-    fields = ['id', 'commande', 'qte', 'nom' ,'prenom']
+    fields = '__all__'
