@@ -12,5 +12,6 @@ urlpatterns = [
     path('rest/cbv/<int:id>', views.CBV_pk.as_view()),
     path('rest/apiproduct/<int:id_product>', views.ApiProduct.as_view()),
     path('REST/RDVAPI/<int:id>', views2.API_RDV.as_view()),
+    path('REST/AppelTel_API/<int:id>',views2.API_AppelTel.as_view()),
 
 ]

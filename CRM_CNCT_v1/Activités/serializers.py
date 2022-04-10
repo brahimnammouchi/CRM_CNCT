@@ -11,4 +11,4 @@ class RendezVousSerializer(serializers.ModelSerializer):
 class AppelTelephoniqueSerializer(serializers.ModelSerializer):
     class Meta:
         model= AppelTelephonique
-        field = '__all__'
+        fields = '__all__'
