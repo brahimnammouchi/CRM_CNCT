@@ -23,7 +23,7 @@ class Product(models.Model):
     image=models.ImageField(null=True,blank=True)
     description = models.CharField(max_length=500, null=True, blank=True)
 class Commande(models.Model):
-    id_command= models.AutoField(primary_key=True,blank=True)
+    id_command= models.AutoField(primary_key=True,auto_created=True, default='1')
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     produit = models.ForeignKey(Product, related_name='commande', on_delete=models.CASCADE)
     qte = models.IntegerField()
