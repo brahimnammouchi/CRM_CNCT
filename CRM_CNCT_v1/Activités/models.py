@@ -15,3 +15,4 @@ class AppelTelephonique(models.Model):
     id = models.IntegerField(primary_key=True,auto_created=True, default='1')
     client= models.ForeignKey(Client, on_delete=models.CASCADE)
     datetime= models.DateField(DateTime)
+    
