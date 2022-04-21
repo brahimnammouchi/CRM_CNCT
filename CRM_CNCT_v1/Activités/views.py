@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
 from rest_framework.decorators import api_view
-from .models import AppelTelephonique, rendez_vous
-from .serializers import AppelTelephoniqueSerializer, RendezVousSerializer
+from .models import ActionCommercial, AppelTelephonique, rendez_vous
+from .serializers import ActioncommercialSerializer, AppelTelephoniqueSerializer, RendezVousSerializer
 
 # API RendezVous
 class API_RDV(APIView):
@@ -69,3 +69,7 @@ class API_RDV(APIView):
 class AppelTel_ViewSet(ModelViewSet):
     serializer_class = AppelTelephoniqueSerializer
     queryset = AppelTelephonique.objects.all()
+#API Action Commercial
+class ActionCom_ViewSet(ModelViewSet):
+    serializer_class = ActioncommercialSerializer
+    queryset = ActionCommercial.objects.all()

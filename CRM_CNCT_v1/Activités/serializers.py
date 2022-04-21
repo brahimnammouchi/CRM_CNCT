@@ -1,4 +1,4 @@
-from dataclasses import field
+from dataclasses import field, fields
 from pyexpat import model
 from rest_framework import serializers
 from .models import *
@@ -11,4 +11,8 @@ class RendezVousSerializer(serializers.ModelSerializer):
 class AppelTelephoniqueSerializer(serializers.ModelSerializer):
     class Meta:
         model= AppelTelephonique
+        fields = '__all__'
+class ActioncommercialSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= ActionCommercial
         fields = '__all__'
