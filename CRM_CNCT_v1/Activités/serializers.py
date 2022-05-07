@@ -16,3 +16,11 @@ class ActioncommercialSerializer(serializers.ModelSerializer):
     class Meta:
         model= ActionCommercial
         fields = '__all__'
+class opportiniteSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = Opportinite
+        fields = '__all__'
+class SegmentMarcheSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = segment_marche
+        fields = '__all__'
