@@ -4,8 +4,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
 from rest_framework.decorators import api_view
+<<<<<<< Updated upstream
 from .models import ActionCommercial, AppelTelephonique, Opportinite, rendez_vous, segment_marche
 from .serializers import ActioncommercialSerializer, AppelTelephoniqueSerializer, RendezVousSerializer, SegmentMarcheSerializer, opportiniteSerializer
+=======
+from .models import ActionCommercial, AppelTelephonique, rendez_vous
+from .serializers import ActioncommercialSerializer, AppelTelephoniqueSerializer, RendezVousSerializer
+>>>>>>> Stashed changes
 
 # API RendezVous
 class API_RDV(APIView):
@@ -73,9 +78,12 @@ class AppelTel_ViewSet(ModelViewSet):
 class ActionCom_ViewSet(ModelViewSet):
     serializer_class = ActioncommercialSerializer
     queryset = ActionCommercial.objects.all()
+<<<<<<< Updated upstream
 class Opportinite_ViewSet(ModelViewSet):
     serializer_class = opportiniteSerializer
     queryset = Opportinite.objects.all()
 class SegmentMarche_ViewSet(ModelViewSet):
     serializer_class = SegmentMarcheSerializer
     queryset = segment_marche.objects.all()
+=======
+>>>>>>> Stashed changes
