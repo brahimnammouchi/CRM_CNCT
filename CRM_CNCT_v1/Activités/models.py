@@ -38,18 +38,15 @@ class AppelTelephonique(models.Model):
     client= models.ForeignKey(Client, on_delete=models.CASCADE)
     datetime= models.DateField(DateTime)
 class ActionCommercial(models.Model):
-<<<<<<< Updated upstream
+
     commercial = models.ForeignKey(User, default=1, null=False, blank=True, on_delete=models.DO_NOTHING)
-=======
     #commercial = 
->>>>>>> Stashed changes
     nom_action = models.CharField(max_length=20)
     CA_esperer = models.IntegerField(blank=True,null=True)
     Cout_action = models.IntegerField(blank=True,null=True)
     But_action = models.CharField(max_length=55)
     debut_action = models.DateTimeField(DateTime)
     echeance = models.DateTimeField(DateTime, null=True)
-<<<<<<< Updated upstream
 class Opportinite(models.Model):
     commercial = models.ForeignKey(User, default=1, null=False, blank=True, on_delete=models.DO_NOTHING)
     nom_opportunite = models.CharField(max_length=20)
@@ -64,7 +61,3 @@ class Opportinite(models.Model):
     document_concernee = models.FileField(upload_to='documents/%Y/%m/%d/')
 class segment_marche(models.Model):
     nom_segment = models.CharField(null=False, max_length=55)
-
-=======
-    
->>>>>>> Stashed changes

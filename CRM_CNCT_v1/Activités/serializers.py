@@ -15,7 +15,6 @@ class AppelTelephoniqueSerializer(serializers.ModelSerializer):
 class ActioncommercialSerializer(serializers.ModelSerializer):
     class Meta:
         model= ActionCommercial
-<<<<<<< Updated upstream
         fields = '__all__'
 class opportiniteSerializer(serializers.ModelSerializer):
      class Meta:
@@ -24,6 +23,4 @@ class opportiniteSerializer(serializers.ModelSerializer):
 class SegmentMarcheSerializer(serializers.ModelSerializer):
      class Meta:
         model = segment_marche
-=======
->>>>>>> Stashed changes
         fields = '__all__'
