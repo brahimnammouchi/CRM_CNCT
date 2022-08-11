@@ -25,9 +25,11 @@ SECRET_KEY = 'django-insecure-x8h2v$k84rsk+@0*00t=hfwd11cnno=4p2^l+%t7&b$*s)qy7$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
-
+SECURE_SSL_REDIRECT=False
+SESSION_COOKIE_SECURE=False
+CSRF_COOKIE_SECURE=False
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +42,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'CommercialApp',
     'Activités',
+    'ReactFrontend',
+    'corsheaders',
+    'connapi',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,7 +56,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+"http://localhost:3000",
+"http://localhost",
+"http://127.0.0.1",
+]    
+
 
 ROOT_URLCONF = 'CRM_CNCT_v1.urls'
 
@@ -71,7 +86,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'CRM_CNCT_v1.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

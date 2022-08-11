@@ -68,6 +68,9 @@ class API_RDV(APIView):
 #        appeltel = self.queryset_Rdv(id)
 #        appeltel.delete()
 #        return Response(status=status.HTTP_204_NO_CONTENT)
+class RDV_ViewSet(ModelViewSet):
+    serializer_class = RendezVousSerializer
+    queryset = rendez_vous.objects.all()
 class AppelTel_ViewSet(ModelViewSet):
     serializer_class = AppelTelephoniqueSerializer
     queryset = AppelTelephonique.objects.all()

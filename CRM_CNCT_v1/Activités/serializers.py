@@ -11,7 +11,7 @@ class RendezVousSerializer(serializers.ModelSerializer):
 class AppelTelephoniqueSerializer(serializers.ModelSerializer):
     class Meta:
         model= AppelTelephonique
-        fields = '__all__'
+        fields = ('id', 'client', 'datetime','completed')
 class ActioncommercialSerializer(serializers.ModelSerializer):
     class Meta:
         model= ActionCommercial
