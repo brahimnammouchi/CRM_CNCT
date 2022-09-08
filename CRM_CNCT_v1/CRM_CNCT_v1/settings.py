@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'Activités',
     'ReactFrontend',
     'corsheaders',
-    'connapi',
 ]
 
 
@@ -59,12 +58,21 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
 "http://localhost:3000",
 "http://localhost",
 "http://127.0.0.1",
 ]    
+CORS_ALLOW_METHODS = [
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+    "DELETE",
+]
 
 
 ROOT_URLCONF = 'CRM_CNCT_v1.urls'

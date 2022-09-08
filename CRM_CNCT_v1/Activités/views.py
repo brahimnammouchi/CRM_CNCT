@@ -1,7 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
+from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,viewsets
 from django.http import Http404
 from rest_framework.decorators import api_view
 from .models import ActionCommercial, AppelTelephonique, Opportinite, rendez_vous, segment_marche
@@ -9,37 +10,37 @@ from .serializers import ActioncommercialSerializer, AppelTelephoniqueSerializer
 from .models import ActionCommercial, AppelTelephonique, rendez_vous
 from .serializers import ActioncommercialSerializer, AppelTelephoniqueSerializer, RendezVousSerializer
 
-# API RendezVous
-class API_RDV(APIView):
-    def queryset_Rdv(self, id):
-        try:
-            return rendez_vous.objects.get(id = id)
-        except rendez_vous.DoesNotExist:
-            raise Http404
+# # API RendezVous
+# class API_RDV(APIView):
+#     def queryset_Rdv(self, id):
+#         try:
+#             return rendez_vous.objects.get(id = id)
+#         except rendez_vous.DoesNotExist:
+#             raise Http404
         
-    def get(self, request, id):
-        rdv = self.queryset_Rdv(id)
-        serializer = RendezVousSerializer(rdv)
-        return Response(serializer.data)
+#     def get(self, request, id):
+#         rdv = self.queryset_Rdv(id)
+#         serializer = RendezVousSerializer(rdv)
+#         return Response(serializer.data)
     
-    def post(self, request, *args, **kwargs):
-        rdv_data = request.data
-        new_rdv = rendez_vous.objects.create()
-        new_rdv.save()
-        serializer = RendezVousSerializer(new_rdv)
-        return Response(serializer.data)
+#     def post(self, request, *args, **kwargs):
+#         rdv_data = request.data
+#         new_rdv = rendez_vous.objects.create()
+#         new_rdv.save()
+#         serializer = RendezVousSerializer(new_rdv)
+#         return Response(serializer.data)
     
-    def put(self, request, id):
-        rdv = self.queryset_Rdv(id)
-        serializer = RendezVousSerializer(rdv, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    def delete(self,request, id):
-        rdv = self.queryset_Rdv(id)
-        rdv.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+#     def put(self, request, id):
+#         rdv = self.queryset_Rdv(id)
+#         serializer = RendezVousSerializer(rdv, data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#     def delete(self,request, id):
+#         rdv = self.queryset_Rdv(id)
+#         rdv.delete()
+#         return Response(status=status.HTTP_204_NO_CONTENT)
       ######### API APPEL TELEPHONIQUE  
 #class API_AppelTel(APIView):
  #   def get_object(self, id):
@@ -71,9 +72,17 @@ class API_RDV(APIView):
 class RDV_ViewSet(ModelViewSet):
     serializer_class = RendezVousSerializer
     queryset = rendez_vous.objects.all()
+    def delete(self, request, id):
+        rendez_vous = self.get_object(id)
+        rendez_vous.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 class AppelTel_ViewSet(ModelViewSet):
     serializer_class = AppelTelephoniqueSerializer
     queryset = AppelTelephonique.objects.all()
+    def delete(self, request, id):
+        AppelTelephonique = self.get_object(id)
+        AppelTelephonique.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 #API Action Commercial
 class ActionCom_ViewSet(ModelViewSet):
     serializer_class = ActioncommercialSerializer
