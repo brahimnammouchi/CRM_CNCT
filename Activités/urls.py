@@ -17,6 +17,7 @@ router.register(r'SegmentMarche', SegmentMarche_ViewSet)
 router.register(r'Client', views2.Client_ViewSet)
 router.register(r'Produit', views2.Product_ViewSet) 
 router.register(r'Commande', views2.Commande_ViewSet)
+router.register(r'RendezVous',RDV_ViewSet)
 #router.register(r'Client',ClientSerializer)
 
 #router.register('RendezVous',RDV_ViewSet )

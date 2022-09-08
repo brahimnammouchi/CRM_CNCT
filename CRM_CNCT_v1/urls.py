@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
      #CRUD API CLIENT
     path('', include('Activités.urls')),
-    path('REST/RDVAPI/<int:id>', views2.API_RDV.as_view()),
+    # path('REST/RDVAPI/<int:id>', views2.API_RDV.as_view()),
    # path('REST/AppelTel_API/<int:id>',views2.API_AppelTel.as_view()),
 
 ]

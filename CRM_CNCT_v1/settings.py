@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'Activités',
     'ReactFrontend',
     'corsheaders',
-    'connapi',
 ]
 
 
