@@ -1,23 +1,20 @@
-django n'accepte pas aycune connection externe
+Objectif : Développer une plateforme de CRM permettant aux entreprises de gérer efficacement leurs interactions avec les clients, de suivre les prospects, et d'automatiser les processus de vente et de service client.
 
-wa9tha 3andk 2 method
+Technologies Utilisées :
 
-1- open cors coté django
- 
- s'il ne fonctionne
- pas ajoute un proxy coté react bech ya"rfk
+React JS : Framework JavaScript pour le développement de l'interface utilisateur dynamique et réactive.
+Django : Framework Web Python pour la construction du back-end robuste et sécurisé.
+API : Utilisation d'API RESTful pour la communication entre le front-end et le back-end, ainsi que pour l'intégration avec d'autres systèmes tiers si nécessaire.
+Git : Système de contrôle de version pour la gestion collaborative du code source.
+DevOps : Ensemble de pratiques visant à automatiser et à intégrer les processus de développement, de livraison et de déploiement pour assurer une livraison continue et une haute qualité du logiciel.
 
- exemple: http://localhost:3000/api/AppelTel/
 
- b ra8m men enou el back 8000 ama acceptek
+Fonctionnalités Principales :
 
- hedha nsamouh proxy ou proxy_pass b lou8et les serveurs web,
-
- ki enti b3tht 3la enek 3000 w howa 9eblk men chira lo5ra 3la enk 3000
- cv?
-
- eyyy
- ecv wdha7et => mrigl :)
- behi kifech tklmni kif tetfdha rigelheli kemla chouf lahdha
- 3andi 4 api bch nrigelhom haka wlwa9t saye mch mta3 debutant 
- chouf kmlhomli wgoli gedech 5netelhe ena b partie devops w rapport?
+Gestion des Contacts : Permet aux utilisateurs de créer, modifier et supprimer des contacts clients.
+Suivi des Interactions : Enregistrement des interactions avec les clients, y compris les appels, les réunions, les courriels, etc.
+Gestion des Tâches : Attribution et suivi des tâches liées aux clients et aux prospects.
+Gestion des Opportunités : Suivi des opportunités de vente, du pipeline des ventes, et des prévisions de revenus.
+Tableaux de Bord et Rapports : Visualisation des données à travers des tableaux de bord personnalisables et des rapports analytiques.
+Intégration avec des Outils Externes : Intégration avec des outils de messagerie, de marketing, de comptabilité, etc., via des API tierces.
+Authentification et Autorisation : Système d'authentification sécurisé pour les utilisateurs avec des niveaux d'autorisation définis.
