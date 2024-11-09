@@ -3,6 +3,6 @@
     "cors": "^2.8.5"
   },
   "scripts": {
-    "start": "node your-script.js"
+    "start": "react-scripts start"
   }
 }

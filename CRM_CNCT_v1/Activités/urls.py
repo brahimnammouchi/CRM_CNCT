@@ -3,7 +3,6 @@ from django.contrib import admin
 from django.urls import URLPattern
 from rest_framework import routers
 from rest_framework.routers import DefaultRouter
-
 from .views import ActionCom_ViewSet, AppelTel_ViewSet, Opportinite_ViewSet, SegmentMarche_ViewSet
 from .views import RDV_ViewSet, ActionCom_ViewSet, AppelTel_ViewSet
 from Activités import views

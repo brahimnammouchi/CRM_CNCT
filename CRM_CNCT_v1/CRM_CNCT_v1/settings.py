@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Activités',
     'ReactFrontend',
     'corsheaders',
+    
 ]
 
 
@@ -101,7 +102,7 @@ WSGI_APPLICATION = 'CRM_CNCT_v1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'cnct2022',
+        'NAME':'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
