@@ -5,6 +5,15 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
+<<<<<<< HEAD
 EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+=======
+COPY . /code
+EXPOSE 8000
+
+WORKDIR /code/CRM_CNCT_v1
+
+CMD python manage.py runserver 0.0.0.0:8000
+>>>>>>> bd5e86ccd77d3904b2f6ec5686edb99584c2c581

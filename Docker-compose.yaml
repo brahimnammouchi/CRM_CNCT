@@ -10,7 +10,12 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
+<<<<<<< HEAD
     build: .
+=======
+    build:
+      context: .
+>>>>>>> bd5e86ccd77d3904b2f6ec5686edb99584c2c581
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
@@ -21,4 +26,18 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     depends_on:
+<<<<<<< HEAD
       - db
+=======
+      - db
+  front:
+    build:
+      context: ./ReactFrontend
+      dockerfile: ./Dockerfile.front
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+    ports:
+      - "8081:8080"
+    tty: true
+>>>>>>> bd5e86ccd77d3904b2f6ec5686edb99584c2c581
